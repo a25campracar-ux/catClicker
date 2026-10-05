@@ -7,11 +7,14 @@
 </head>
 <body>
     <img id="gato1" src="img/gato1.jpg" alt="gato">
-    <h3>Clicks: <p id="clicks">0</p></h3>
+    <h3>Clicks: <p id="clicks1">0</p></h3>
+    <img id="gato2" src="img/gato2.jpg" alt="gato2">
+    <h3>Clicks: <p id="clicks2">0</p></h3>
 </body>
 
 <script>
     let cont=0;
+    let cont2=0;
     document.getElementById("gato1").addEventListener("click", function(){
     cont++;
     document.getElementById("clicks").innerHTML=cont;
