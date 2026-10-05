@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Clicker</title>
+</head>
+<body>
+    <img id="gato1" src="img/gato1.jpg" alt="gato">
+    <h3>Clicks: <p id="clicks">0</p></h3>
+</body>
+
+<script>
+    let cont=0;
+    document.getElementById("gato1").addEventListener("click", function(){
+    cont++;
+    document.getElementById("clicks").innerHTML=cont;
+    })
+</script>
+</html>
