@@ -13,6 +13,8 @@
 
 const gatos = ['Felipe', 'Mariano', 'Rodolfo', 'Emilio', 'Daniel'];
 const imagenes = ['img/gato1.jpg', 'img/gato2.jpg', 'img/gato3.jpg', 'img/gato4.jpg', 'img/gato5.jpg'];
+const contadores = new Array(gatos.length).fill(0);
+let gatoActual = -1;
 
 const lista = document.getElementById("lista");
 
@@ -20,20 +22,25 @@ for (let i = 0; i < gatos.length; i++) {
     // Añadir nombre del gato
     const nuevoItem = document.createElement('li');
     nuevoItem.textContent = gatos[i];
-    nuevoItem.addEventListener('click', function(event){
+    nuevoItem.addEventListener('click', function(){
+        gatoActual = i;
         mostrar(i);
     });
     
     lista.appendChild(nuevoItem);
 }
 
+const img = document.getElementById('imgGato');
+img.addEventListener('click', function(){
+    if (gatoActual !== -1) {
+        contadores[gatoActual]++;
+        document.getElementById("clicks").textContent = contadores[gatoActual];
+    }    
+})
+
 function mostrar(posicion) {
-    let cont=0;
-    // Añadir imagen
-    const img = document.getElementById('imgGato');
     img.src = imagenes[posicion];
-    img.addEventListener('click', function(){
-        cont++;
-        document.getElementById("clicks").innerHTML=cont;
-    })
+
+    document.getElementById('nombreGato').textContent = gatos[posicion];
+    document.getElementById('clicks').textContent = contadores[posicion];
 }
